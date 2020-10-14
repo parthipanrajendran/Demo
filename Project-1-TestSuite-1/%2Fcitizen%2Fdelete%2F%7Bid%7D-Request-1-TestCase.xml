@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="ac2d5e48-6dbe-448d-b816-fc054e6fc5b5" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="/citizen/delete/{id}-Request 1 TestCase" searchProperties="true" timeout="0" zephyrTestName="" zephyrTestId="" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="ac2d5e48-6dbe-448d-b816-fc054e6fc5b5fileName">%2Fcitizen%2Fdelete%2F%7Bid%7D-Request-1-TestCase</con:setting>
+  </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:testStep type="restrequest" name="DELETE Request" id="c6d7a6b5-b78d-48b3-800c-66feb4436861">
+    <con:settings/>
+    <con:config service="Hello World - Citizen API" resourcePath="/citizen/delete/{id}" methodName="deleteCitizen" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="DELETE Request" id="025b2770-9d70-4918-b5bc-0c9b3e2b5aa8" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>http://localhost:8083</con:endpoint>
+        <con:request/>
+        <con:originalUri>http://localhost/citizen/delete/3</con:originalUri>
+        <con:assertion type="Response SLA Assertion" id="4ce4e26f-fb81-42b2-9393-577c803da31f" name="Response SLA">
+          <con:configuration>
+            <SLA>200</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="id" value="3"/>
+        </con:parameters>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

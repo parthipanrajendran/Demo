@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="/citizen/delete/{id}" path="/citizen/delete/{id}" id="232658cc-231a-4e0e-9f69-44b6b7ef0463" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="232658cc-231a-4e0e-9f69-44b6b7ef0463fileName">%2Fcitizen%2Fdelete%2F%7Bid%7D</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="deleteCitizen" id="267328ef-3ae0-45ed-a2b7-0af58db2805a" method="DELETE">
+    <con:description>Delete citizen</con:description>
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>id</con:name>
+        <con:style>TEMPLATE</con:style>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>Deleted</con:description>
+      <con:sampleContent>{
+  "id" : 0,
+  "name" : "string"
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>404</con:status>
+      <con:params/>
+      <con:description>Citizen not found</con:description>
+      <con:sampleContent>{
+  "id" : 0,
+  "name" : "string"
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>401</con:status>
+      <con:params/>
+      <con:description>Unauthorized</con:description>
+      <con:sampleContent>{
+  "id" : 0,
+  "name" : "string"
+}</con:sampleContent>
+    </con:representation>
+    <con:request name="Request 1" id="025b2770-9d70-4918-b5bc-0c9b3e2b5aa8" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>http://localhost:8080</con:endpoint>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

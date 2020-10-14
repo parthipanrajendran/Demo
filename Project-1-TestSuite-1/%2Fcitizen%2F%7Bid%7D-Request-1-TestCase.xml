@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="c780d1e1-2e8c-4d61-a0bc-4b531cf0679e" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="/citizen/{id}-Request 1 TestCase" searchProperties="true" timeout="0" zephyrTestName="TEST-4" zephyrTestId="10003" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="c780d1e1-2e8c-4d61-a0bc-4b531cf0679efileName">%2Fcitizen%2F%7Bid%7D-Request-1-TestCase</con:setting>
+  </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:testStep type="datasource" name="DataSource" id="1ff38acf-53d3-4fcc-91f1-f306f1d68bd5">
+    <con:settings/>
+    <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:dataSource type="Excel">
+        <con:configuration>
+          <file>C:/Users/dattasai.sukumar/Desktop/SoapData.xlsx</file>
+          <worksheet/>
+          <cell>A2</cell>
+          <ignoreEmpty>false</ignoreEmpty>
+          <evaluateFormulas>false</evaluateFormulas>
+        </con:configuration>
+      </con:dataSource>
+      <con:shared>true</con:shared>
+      <con:restartShared>true</con:restartShared>
+      <con:property>id</con:property>
+      <con:restartOnRun>true</con:restartOnRun>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="GET Request" id="6ebb7416-4fca-4486-a68b-fd40a8b7c92b">
+    <con:settings/>
+    <con:config service="Hello World - Citizen API" resourcePath="/citizen/{id}" methodName="getCitizen" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="GET Request" id="390bf52b-ceec-49d0-bbee-cf43115975be" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>http://localhost:8083</con:endpoint>
+        <con:request/>
+        <con:originalUri>http://localhost/citizen/7</con:originalUri>
+        <con:assertion type="Response SLA Assertion" id="0aaceddc-47a0-4503-963d-3a8585c70cba" name="Response SLA">
+          <con:configuration>
+            <SLA>200</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="id" value="${DataSource#id}"/>
+        </con:parameters>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="datasourceloop" name="DataSource Loop" id="5254398e-c7fb-481c-be79-85c4eb398284">
+    <con:settings/>
+    <con:config>
+      <dataSourceStep>DataSource</dataSourceStep>
+      <targetStep>GET Request</targetStep>
+      <discardResults>true</discardResults>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="/citizen/set" path="/citizen/set" id="925c3c3c-8747-427d-abaf-c7e1d6a35f8f" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="925c3c3c-8747-427d-abaf-c7e1d6a35f8ffileName">%2Fcitizen%2Fset</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="setCitizen" id="fd9ae049-5fbc-46c7-aef2-a88fec042710" method="POST">
+    <con:description>Add citizen information</con:description>
+    <con:settings/>
+    <con:parameters/>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>Ok</con:description>
+      <con:sampleContent>{
+  "id" : 0,
+  "name" : "string"
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>401</con:status>
+      <con:params/>
+      <con:description>Unauthorized</con:description>
+      <con:sampleContent>{
+  "id" : 0,
+  "name" : "string"
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/json</con:mediaType>
+      <con:params/>
+      <con:sampleContent>{
+  "id" : 0,
+  "name" : "string"
+}</con:sampleContent>
+    </con:representation>
+    <con:request name="Request 1" id="5367ace0-1485-4333-838b-50fdd03640eb" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>http://localhost:8080</con:endpoint>
+      <con:request>{\r
+  "id" : 0,\r
+  "name" : "string"\r
+}</con:request>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

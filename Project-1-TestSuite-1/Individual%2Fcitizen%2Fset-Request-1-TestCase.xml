@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="f53107b9-b605-4c2a-af5f-fdf3281ede23" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="Individual/citizen/set-Request 1 TestCase" searchProperties="true" timeout="0" zephyrTestName="" zephyrTestId="" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="f53107b9-b605-4c2a-af5f-fdf3281ede23fileName">Individual%2Fcitizen%2Fset-Request-1-TestCase</con:setting>
+  </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:testStep type="datasource" name="DataSource" id="a2b96cfa-9c02-4334-8ad7-bd6c38e6944a">
+    <con:settings/>
+    <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:dataSource type="Excel">
+        <con:configuration>
+          <file>C:/Users/dattasai.sukumar/Desktop/SoapData.xlsx</file>
+          <worksheet>Datasheet</worksheet>
+          <cell>A2</cell>
+          <ignoreEmpty>false</ignoreEmpty>
+          <evaluateFormulas>false</evaluateFormulas>
+        </con:configuration>
+      </con:dataSource>
+      <con:shared>true</con:shared>
+      <con:restartShared>true</con:restartShared>
+      <con:property>id</con:property>
+      <con:property>username</con:property>
+      <con:restartOnRun>true</con:restartOnRun>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="POST Request" id="20ac19e0-f88d-46ac-9aaf-d5b4b84823fc">
+    <con:settings/>
+    <con:config service="Hello World - Citizen API" resourcePath="/citizen/set" methodName="setCitizen" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="POST Request" id="5367ace0-1485-4333-838b-50fdd03640eb" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>http://localhost:8083</con:endpoint>
+        <con:request>{\r
+   "id" : "${DataSource#id}",\r
+   "name" : "${DataSource#username}"\r
+}</con:request>
+        <con:originalUri>http://localhost/citizen/set</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="7672ecd6-5867-4e19-98df-41d821a17a09" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="datasourceloop" name="DataSource Loop" id="6d28b278-cb99-4eae-87f9-6cfece5d2d6e">
+    <con:settings/>
+    <con:config>
+      <dataSourceStep>DataSource</dataSourceStep>
+      <targetStep>POST Request</targetStep>
+      <discardResults>true</discardResults>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+  <con:breakPoints>
+    <con:testStepId>9596b4a0-3f66-4dc0-bd77-6199f0bbd32d</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>0ca1f55d-f6e0-4976-bcc2-eef6fabe56c8</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>1596ab4f-3723-4cfd-be91-fd4349f55187</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>73ea7c37-8193-47c3-b765-511bfa29bf18</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>d9366054-ef10-4460-a297-c9624ade0a6c</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+</con:testCase>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="/citizens" path="/citizens" id="941fdce6-ffd2-4517-85e6-a8c51bd9d6f5" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="941fdce6-ffd2-4517-85e6-a8c51bd9d6f5fileName">%2Fcitizens</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="getAllCitizens" id="e1380450-62b5-49e0-bc61-a1f3f2fe89c6" method="GET">
+    <con:description>Obtain information about existing Citizens</con:description>
+    <con:settings/>
+    <con:parameters/>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>401</con:status>
+      <con:params/>
+      <con:description>Unauthorized</con:description>
+      <con:sampleContent>{
+  "id" : 0,
+  "name" : "string"
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>Ok</con:description>
+      <con:sampleContent>{
+  "id" : 0,
+  "name" : "string"
+}</con:sampleContent>
+    </con:representation>
+    <con:request name="Request 1" id="60b9d873-9800-478b-86f5-3500b970b695" mediaType="application/json">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:endpoint>http://localhost:8083</con:endpoint>
+      <con:request/>
+      <con:originalUri>http://localhost/citizens</con:originalUri>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+      <con:parameterOrder/>
+    </con:request>
+  </con:method>
+</con:resource>

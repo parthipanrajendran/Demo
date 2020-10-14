@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="/citizen/{id}" path="/citizen/{id}" id="194823de-7aa1-4369-a786-3b819ab84663" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="194823de-7aa1-4369-a786-3b819ab84663fileName">%2Fcitizen%2F%7Bid%7D</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="getCitizen" id="c2f3051b-697a-4a9c-a04d-7a02e67c127a" method="GET">
+    <con:description>Get citizen information by Id</con:description>
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>id</con:name>
+        <con:style>TEMPLATE</con:style>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>Ok</con:description>
+      <con:sampleContent>{
+  "id" : 0,
+  "name" : "string"
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>401</con:status>
+      <con:params/>
+      <con:description>Unauthorized</con:description>
+      <con:sampleContent>{
+  "id" : 0,
+  "name" : "string"
+}</con:sampleContent>
+    </con:representation>
+    <con:request name="Request 1" id="390bf52b-ceec-49d0-bbee-cf43115975be" mediaType="application/json">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:endpoint>http://localhost:8083</con:endpoint>
+      <con:request/>
+      <con:originalUri>http://localhost/citizen/1</con:originalUri>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters>
+        <con:entry key="id" value="1"/>
+      </con:parameters>
+    </con:request>
+  </con:method>
+</con:resource>

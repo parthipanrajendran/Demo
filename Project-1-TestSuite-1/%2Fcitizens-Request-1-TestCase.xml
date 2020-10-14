@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="284ba4f0-2c6e-4e55-8961-2c5949e1a1dd" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="/citizens-Request 1 TestCase" searchProperties="true" timeout="0" zephyrTestName="" zephyrTestId="" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="284ba4f0-2c6e-4e55-8961-2c5949e1a1ddfileName">%2Fcitizens-Request-1-TestCase</con:setting>
+  </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:testStep type="restrequest" name="GET Request" id="7c5153f2-a47e-47e2-b783-7e10a95e2be3">
+    <con:settings/>
+    <con:config service="Hello World - Citizen API" resourcePath="/citizens" methodName="getAllCitizens" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="GET Request" id="60b9d873-9800-478b-86f5-3500b970b695" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>http://localhost:8083</con:endpoint>
+        <con:request/>
+        <con:originalUri>http://localhost/citizens</con:originalUri>
+        <con:assertion type="Response SLA Assertion" id="24b08ab7-7f02-4d9a-a292-b92937b78832" name="Response SLA">
+          <con:configuration>
+            <SLA>200</SLA>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+        <con:parameterOrder/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>
