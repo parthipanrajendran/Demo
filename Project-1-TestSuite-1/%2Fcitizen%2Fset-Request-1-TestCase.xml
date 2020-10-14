@@ -146,6 +146,10 @@
       <discardResults>true</discardResults>
     </con:config>
   </con:testStep>
+  <con:testStep type="assertionteststep" name="Assertion" id="e3a3b876-deea-43e5-8a39-ee3b459fb401">
+    <con:settings/>
+    <con:config xsi:type="con:AssertionTestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+  </con:testStep>
   <con:properties/>
   <con:reportParameters/>
   <con:breakPoints>
